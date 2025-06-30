@@ -8,9 +8,9 @@ const userApi = apiInstance({
 
 export const orderService = {
     getAllOrderByAccountID: async (id: number): Promise<ApiResponse<Order[]> | null> => {
-        const orders: Order[] = mockData;
+        const orders: ApiResponse<Order[]> = await userApi.get(`/${id}`);
         return {
-            data: orders.filter(item => item.accountID === id),
+            data: orders.data,
             code: 200,
             message: 'Success'
         }
@@ -29,7 +29,7 @@ export interface Order {
     orderDate: string;
     orderStatus: string;
     totalAmount: number;
-    OrderDetail: OrderDetail[];
+    orderDetail: OrderDetail[];
 }
 
 export interface OrderDetail {

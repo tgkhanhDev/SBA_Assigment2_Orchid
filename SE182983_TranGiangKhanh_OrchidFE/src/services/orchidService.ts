@@ -11,12 +11,6 @@ const orchidApi = apiInstance({
 export const orchidService = {
     getOrchidFilter: async (request: any): Promise<ApiResponse<Orchid[]> | null> => {
         try {
-            // const itemResponse: Orchid[] = mockData;
-            // const res = {
-            //     data: itemResponse.filter(item => item.orchidName.toLowerCase().includes(request.orchidName.toLowerCase())),
-            //     code: 200,
-            //     message: 'Success'
-            // }
             const itemResponse: AxiosResponse<ApiResponse<Orchid[]>> = await orchidApi.get("", {
                 params: {
                     search: request.orchidName
@@ -46,11 +40,19 @@ export const orchidService = {
         }
     },
 
-    countOrchids: async (): Promise<ApiResponse<number>> => {
+    countOrchids: async (): Promise<ApiResponse<any>> => {
         try {
-            // const countResponse: AxiosResponse<ApiResponse<number>> = await orchidApi.get(`/count`);
-            // return countResponse.data;
-            const countResponse = mockData.length
+            const itemResponse: any = await orchidApi.get("", {
+                params: {
+                    search: ''
+                }
+            });
+            console.log("statRs:", itemResponse);
+            
+            const countResponse = {
+                total: itemResponse.data.length,
+                natural: itemResponse.data.filter(item => item.isNatural).length
+            }
             return {
                 data: countResponse,
                 code: 200,

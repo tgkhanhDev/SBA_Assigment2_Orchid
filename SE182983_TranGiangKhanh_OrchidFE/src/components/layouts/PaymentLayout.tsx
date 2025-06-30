@@ -89,13 +89,12 @@ const PaymentLayout: React.FC = () => {
         const orderRes = await orderService.createOrder(order);
 
         console.log("finalOrder:", orderRes);
-        
-
+    
 
 
         alert(`Đơn hàng của bạn đã được đặt thành công!\nTổng tiền: ₫${calculateTotalPrice().toLocaleString()}\nChúng tôi sẽ liên hệ với bạn sớm nhất.`);
 
-        // localStorage.removeItem('cart');
+        localStorage.removeItem('cart');
 
     };
 

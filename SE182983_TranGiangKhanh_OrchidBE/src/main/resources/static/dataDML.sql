@@ -1,7 +1,7 @@
 INSERT INTO roles (role_name) VALUES ('ADMIN');
 INSERT INTO roles (role_name) VALUES ('CUSTOMER');
 
-INSERT INTO accounts (acount_name, email, password, role_id)
+INSERT INTO accounts (account_name, email, password, role_id)
 VALUES
     ('John Doe', 'john@example.com', '123', 1),
     ('Jane Smith', 'jane@example.com', '123', 2);

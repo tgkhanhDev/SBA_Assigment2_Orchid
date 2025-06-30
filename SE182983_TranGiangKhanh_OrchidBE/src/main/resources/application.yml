@@ -5,9 +5,10 @@ spring:
   application:
     name: se182983-sba301
   datasource:
-    url: jdbc:sqlserver://localhost:1433;databaseName=sba301_orchid;encrypt=true;trustServerCertificate=true
+    url: jdbc:sqlserver://trangiangkhanh.online:1433;databaseName=sba301_orchid;encrypt=true;trustServerCertificate=true
     username: sa
-    password: Tgk@170504
+    password: toiyeuanime@170504
+#    password: Tgk@170504
     driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
   jpa:
     properties:

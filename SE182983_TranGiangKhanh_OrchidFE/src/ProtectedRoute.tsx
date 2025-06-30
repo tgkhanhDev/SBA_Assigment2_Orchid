@@ -8,13 +8,13 @@ interface ProtectedRouteProps {
 
 const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ adminOnly }) => {
     const userRole = localStorage.getItem('role'); 
-
+    
     // Not login yet
     // if (!userRole) {
     //     return <Navigate to="/login" replace />;
     // }
 
-    if (adminOnly && userRole !== '1') {
+    if (adminOnly && JSON.parse(userRole+"") != "ADMIN") {
         return <Navigate to="/" replace />;
     }
 

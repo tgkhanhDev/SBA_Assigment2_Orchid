@@ -17,8 +17,9 @@ export const DashboardModal = () => {
             setCategoryOptions([...categoryOpt]);
         }
         fetchOptions()
+        
     }, [])
-
+    
     const statusOption = [
         { value: true, label: 'Active' },
         { value: false, label: 'Inactive' },
@@ -171,8 +172,16 @@ export const DashboardModal = () => {
                             <Select
                                 options={categoryOptions}
                                 placeholder="Select Category"
-                                value={categoryOptions?.find(option => option.value == orchidUpdateInfo?.categoryID) || 0}
-                                onChange={e => setOrchidUpdateInfo({ ...orchidUpdateInfo, categoryID: e.value })}
+                                value={categoryOptions.find(option => option.value === orchidUpdateInfo?.categoryID)}
+                                onChange={(selectedOption) => {
+                                    setOrchidUpdateInfo({
+                                        ...orchidUpdateInfo,
+                                        category: {
+                                            categoryID: selectedOption.value,
+                                            categoryName: selectedOption.label
+                                        }
+                                    });
+                                }}
                             />
                             <small id="emailHelp" className="form-text text-danger">{orchidErrorInfo?.categoryID}</small>
                         </div>

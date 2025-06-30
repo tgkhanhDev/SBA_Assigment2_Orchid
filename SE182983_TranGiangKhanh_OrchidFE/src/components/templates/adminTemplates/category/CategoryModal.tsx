@@ -26,8 +26,8 @@ export const CategoryModal = () => {
     ]
 
     const handleCreateCategory = async () => {
-        // const createResData = await categoryService.createCategory(categoryUpdateInfo);
-        const createResData = {message: 'This function is not supported'}
+        const createResData = await categoryService.createCategory(categoryUpdateInfo);
+        // const createResData = {message: 'This function is not supported'}
         await fetchCategoryList();
         await fetchCategoryStats();
         Swal.fire({
@@ -42,18 +42,17 @@ export const CategoryModal = () => {
         await fetchCategoryList();
         await fetchCategoryStats();
         Swal.fire({
-            title: updateResData.message,
+            title: "Tạo loại hoa thành công",
             icon: "success"
         });
     }
 
     const handleDeleteCategory = async () => {
-        // const deleteResData = await categoryService.deleteCategory(categoryUpdateInfo.categoryID);
-        const deleteResData = { message: 'This function is not supported' }
+        const deleteResData = await categoryService.deleteCategory(categoryUpdateInfo.categoryID);
         await fetchCategoryList();
         await fetchCategoryStats();
         Swal.fire({
-            title: deleteResData.message,
+            title: "Xóa thành công",
             icon: "success"
         });
     }
@@ -101,7 +100,7 @@ export const CategoryModal = () => {
                             <small id="emailHelp" className="form-text text-danger">{categoryErrorInfo?.categoryName}</small>
 
                         </div>
-                        <div className="form-group mb-2">
+                        {/* <div className="form-group mb-2">
                             <label htmlFor="categoryDescription">Mô tả</label>
                             <input type="text" className="form-control" id="categoryDescription" aria-describedby="emailHelp" placeholder="Nhập mô tả"
                                 value={categoryUpdateInfo?.categoryDescription}
@@ -114,7 +113,7 @@ export const CategoryModal = () => {
                             />
                             <small id="emailHelp" className="form-text text-danger">{categoryErrorInfo?.categoryDescription}</small>
 
-                        </div>
+                        </div> */}
                     </div>
                     <div className="modal-footer d-flex justify-content-between">
                         <div>

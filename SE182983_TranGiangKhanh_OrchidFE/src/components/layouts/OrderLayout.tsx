@@ -19,8 +19,10 @@ export const OrderLayout: React.FC = () => {
             setError(null);
             try {
                 const id = localStorage.getItem('id');
-                const response = await orderService.getAllOrderByAccountID(parseInt(id as string)); 
-                setOrders(response?.data || []);
+                const response: any = await orderService.getAllOrderByAccountID(parseInt(id as string)); 
+                console.log("orders: ", response);
+                
+                setOrders(response.data || []);
             } catch (err) {
                 console.error("Failed to fetch orders:", err);
                 setError('Không thể tải danh sách đơn hàng. Vui lòng thử lại.');
@@ -33,6 +35,8 @@ export const OrderLayout: React.FC = () => {
     }, []);
 
     const handleViewDetails = (order: Order) => {
+        console.log("ordersadasdas:", order);
+        
         setSelectedOrder(order);
         setIsModalOpen(true);
     };

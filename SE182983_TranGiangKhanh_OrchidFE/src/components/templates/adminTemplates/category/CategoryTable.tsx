@@ -6,6 +6,9 @@ export const CategoryTable = () => {
 
     const { categoryList, setCategoryUpdateInfo, handleUpdateModal, resetModal } = useContext<any>(AdminCategoryContext);
 
+    useEffect(()=>{
+        console.log("categoryList: ", categoryList);
+    }, [categoryList])
 
     return (
         <div>

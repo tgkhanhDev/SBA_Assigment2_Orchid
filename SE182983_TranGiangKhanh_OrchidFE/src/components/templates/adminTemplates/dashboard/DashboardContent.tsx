@@ -44,7 +44,7 @@ export const DashboardProvider = ({ children }) => {
       orchidName: item?.orchidName,
       orchidUrl: item?.orchidUrl,
       price: item?.price,
-      categoryID: item?.Category.categoryID
+      categoryID: item?.category.categoryID
     })
   }
 
@@ -67,8 +67,8 @@ export const DashboardProvider = ({ children }) => {
   //? }
   const fetchCategories = async () => {
     const newOptions: any[] = []
-    const categoryList = await categoryService.getCategoryWithFilter({ categoryName: '' });
-    categoryList?.data.map(item => {
+    const categoryList: any = await categoryService.getCategoryWithFilter({ categoryName: '' });
+    categoryList?.map(item => {
       newOptions.push({
         value: item?.categoryID,
         label: item?.categoryName
@@ -78,18 +78,18 @@ export const DashboardProvider = ({ children }) => {
   }
 
   const fetchOrchidList = async () => {
-    const orchid = await orchidService.getOrchidFilter({ orchidName: searchText });
-    setOrchid(orchid?.data || []);
+    const orchid: any = await orchidService.getOrchidFilter({ orchidName: searchText });    
+    setOrchid(orchid || []); 
 
   }
 
   const fetchOrchidStats = async () => {
     const stats = await orchidService.countOrchids();
-
+    
     //Test
     setOrchidStats({
-      total: stats?.data || 0,
-      natural: stats?.data || 0
+      total: stats?.data.total || 0,
+      natural: stats?.data.natural || 0
     })
   }
 

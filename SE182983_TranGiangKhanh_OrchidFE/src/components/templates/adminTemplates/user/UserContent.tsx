@@ -123,7 +123,7 @@ export const UserProvider = ({ children }) => {
 const UserContent = () => {
     useEffect(() => {
         const role = localStorage.getItem("role")
-        if (role != 1) {
+        if (role != 'ADMIN') {
             window.location.href = "/admin";
         }
     },[])

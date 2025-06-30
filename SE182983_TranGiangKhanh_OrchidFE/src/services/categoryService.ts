@@ -13,27 +13,30 @@ export const categoryService = {
     getCategoryWithFilter: async ({ categoryName }): Promise<ApiResponse<Category[]> | null> => {
         try {
             categoryName = categoryName?.trim() || "";
-            // const lsCategories: AxiosResponse<ApiResponse<Category[]>, any> = await categoryApi.get(`/list?name=${categoryName}`);
-            // return lsCategories.data;
-            const responseItem: Category[] = mockData.filter(item => item.categoryName.toLowerCase().includes(categoryName?.toLowerCase()))
-                ;
-            const res = {
-                data: responseItem,
-                code: 200,
-                message: 'Success'
-            }
-            return res
+            const lsCategories: AxiosResponse<ApiResponse<Category[]>, any> = await categoryApi.get(``,{
+                params: {
+                    search: categoryName
+                }
+            });
+            return lsCategories.data;
         } catch (error) {
             return null;
         }
     },
-    countCategory: async (): Promise<ApiResponse<number>> => {
+    countCategory: async (): Promise<ApiResponse<any>> => {
         try {
-            // const countResponse: AxiosResponse<ApiResponse<number>> = await categoryApi.get(`/count`);
-            // return countResponse.data;
-            const countResponse: number = mockData?.length || 0;
+            const lsCategories: any = await categoryApi.get(``,{
+                params: {
+                    search: ""
+                }
+            });            
+
+            const res = {
+                total: lsCategories.data.length
+            }
+
             return {
-                data: countResponse,
+                data: res,
                 code: 200,
                 message: 'Success'
             }
@@ -43,7 +46,7 @@ export const categoryService = {
     },
     createCategory: async ({ categoryName }): Promise<ApiResponse<Category> | null> => {
         try {
-            const createItemResponse: AxiosResponse<ApiResponse<Category>> = await categoryApi.post(`/`, { categoryName });
+            const createItemResponse: AxiosResponse<ApiResponse<Category>> = await categoryApi.post(``, { categoryName });
             return createItemResponse.data;
         } catch (error) {
             return null;

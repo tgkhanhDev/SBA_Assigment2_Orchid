@@ -22,6 +22,7 @@ public class Account {
 
     @Column(name = "account_name")
     private String acountName;
+
     private String email;
     private String password;
 

@@ -24,7 +24,7 @@ const OrderDetailModal: React.FC<OrderDetailModalProps> = ({ order, onClose }) =
           <p>Đang tải chi tiết sản phẩm...</p>
         ) : (
           <div className="order-items-modal">
-            {order.OrderDetail.map(item => (
+            {order.orderDetail.map(item => (
               <div key={item.id} className="order-item-modal-card">
                 <img src={item.orchidUrl || 'https://via.placeholder.com/50'} alt={item.orchidName} className="order-item-modal-img" />
                 <div className="order-item-modal-info">

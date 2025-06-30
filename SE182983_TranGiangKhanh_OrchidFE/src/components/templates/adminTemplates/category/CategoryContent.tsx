@@ -38,14 +38,15 @@ export const CategoryProvider = ({ children }) => {
   }
 
   const fetchCategoryList = async () => {
-    const categories = await categoryService.getCategoryWithFilter({ categoryName: searchText });
-    setCategoryList(categories?.data || []);
+    const categories: any = await categoryService.getCategoryWithFilter({ categoryName: searchText });
+    setCategoryList(categories || []);
   }
 
   const fetchCategoryStats =  async () => {
     const stats = await categoryService.countCategory();
+    
     setCategoryStats({
-      total: stats.data
+      total: stats.data.total
     });
   }
 
