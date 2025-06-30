@@ -1,0 +1,201 @@
+/* --- Order Detail Modal Styles --- */
+.modal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+    /* Ensure it's above other content */
+    animation: fadeInOverlay 0.3s ease-out;
+}
+
+@keyframes fadeInOverlay {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+.modal-content {
+    background-color: #fff !important;
+    padding: 35px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    max-width: 600px;
+    width: 90%;
+    position: relative;
+    animation: scaleInModal 0.3s ease-out;
+    max-height: 90vh;
+    /* Limit height to prevent overflow */
+    overflow-y: auto;
+    /* Enable scrolling for long content */
+}
+
+@keyframes scaleInModal {
+    from {
+        transform: scale(0.9);
+        opacity: 0;
+    }
+
+    to {
+        transform: scale(1);
+        opacity: 1;
+    }
+}
+
+.modal-close-button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: none;
+    border: none;
+    font-size: 2rem;
+    color: #888;
+    cursor: pointer;
+    line-height: 1;
+    padding: 0;
+    transition: color 0.2s ease;
+}
+
+.modal-close-button:hover {
+    color: #333;
+}
+
+.modal-content h2 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 25px;
+    text-align: center;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.order-summary-modal {
+    background-color: #f8f8f8;
+    padding: 20px;
+    border-radius: 8px;
+    margin-bottom: 30px;
+    border: 1px solid #eee;
+}
+
+.order-summary-modal p {
+    margin-bottom: 10px;
+    font-size: 1.05rem;
+    color: #555;
+}
+
+.order-summary-modal strong {
+    color: #333;
+}
+
+.status-badge {
+    padding: 4px 10px;
+    border-radius: 15px;
+    font-size: 0.85rem;
+    font-weight: bold;
+    color: white;
+    margin-left: 10px;
+}
+
+/* Status colors for modal */
+.status-badge.pending {
+    background-color: #f39c12;
+}
+
+.status-badge.processing {
+    background-color: #3498db;
+}
+
+.status-badge.shipped {
+    background-color: #2ecc71;
+}
+
+.status-badge.delivered {
+    background-color: #27ae60;
+}
+
+.status-badge.cancelled {
+    background-color: #e74c3c;
+}
+
+
+.modal-content h3 {
+    font-size: 1.5rem;
+    color: #34495e;
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.order-items-modal {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.order-item-modal-card {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    padding: 10px;
+    background-color: #fefefe;
+    border: 1px solid #f0f0f0;
+    border-radius: 8px;
+}
+
+.order-item-modal-img {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 4px;
+}
+
+.order-item-modal-info {
+    flex-grow: 1;
+}
+
+.order-item-modal-info h4 {
+    font-size: 1.1rem;
+    color: #2c3e50;
+    margin-bottom: 5px;
+}
+
+.order-item-modal-info p {
+    font-size: 0.9rem;
+    color: #666;
+    margin-bottom: 3px;
+}
+
+/* Responsive adjustments for modal */
+@media (max-width: 600px) {
+    .modal-content {
+        padding: 25px;
+        width: 95%;
+    }
+
+    .modal-content h2 {
+        font-size: 1.8rem;
+    }
+
+    .order-summary-modal,
+    .order-items-modal {
+        font-size: 0.9rem;
+    }
+
+    .order-item-modal-card {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    .order-item-modal-img {
+        margin-bottom: 10px;
+    }
+}

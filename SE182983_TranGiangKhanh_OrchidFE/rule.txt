@@ -1,0 +1,13 @@
+“Admin” role: 
++Account management (CRUD, the delete action will delete an account in the case this account is not belong to any news articles (created), 
+if the account is already created any news article, cannot delete.)
++Only Admin manage Delete Account
+
+
+“Staff” role: 
++Category management (The delete action will delete an item in the case this item is not belong to any news articles. If the item is already stored in a news article cannot delete.)
++News article management (Read, Create, Update and Delete actions).
+
+
+"GUEST" role:
++Not able to access this page

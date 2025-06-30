@@ -1,0 +1,175 @@
+/* --- Order Page Specific Styles --- */
+.orders-page-container {
+    background-color: #f9f9f9;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    max-width: 900px;
+    margin: 40px auto;
+    font-family: 'Arial', sans-serif;
+    color: #333;
+}
+
+.orders-title {
+    text-align: center;
+    font-size: 2.8rem;
+    color: #2c3e50;
+    margin-bottom: 40px;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.empty-orders-message {
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    padding: 50px 0;
+    border: 1px dashed #ddd;
+    border-radius: 8px;
+    background-color: #fefefe;
+}
+
+.orders-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.order-card {
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+    cursor: pointer;
+    /* Indicate it's clickable */
+}
+
+.order-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.order-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+}
+
+.order-id {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #2c3e50;
+}
+
+.order-status {
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+
+/* Status specific colors */
+.order-status.pending {
+    background-color: #f39c12;
+}
+
+/* Orange */
+.order-status.processing {
+    background-color: #3498db;
+}
+
+/* Blue */
+.order-status.shipped {
+    background-color: #2ecc71;
+}
+
+/* Green */
+.order-status.delivered {
+    background-color: #27ae60;
+}
+
+/* Darker Green */
+.order-status.cancelled {
+    background-color: #e74c3c;
+}
+
+/* Red */
+
+.order-body p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 8px;
+}
+
+.order-body strong {
+    color: #333;
+}
+
+.order-footer {
+    margin-top: 20px;
+    padding-top: 15px;
+    border-top: 1px dashed #eee;
+    display: flex;
+    justify-content: flex-end;
+    /* Align buttons to the right */
+    gap: 10px;
+}
+
+.view-details-button,
+.cancel-order-button {
+    background-color: #73CABE;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: background-color 0.2s ease;
+}
+
+.view-details-button:hover {
+    background-color: #5aa190;
+}
+
+.cancel-order-button {
+    background-color: #e74c3c;
+}
+
+.cancel-order-button:hover {
+    background-color: #c0392b;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .orders-page-container {
+        padding: 20px;
+    }
+
+    .orders-title {
+        font-size: 2.2rem;
+    }
+
+    .order-card {
+        padding: 20px;
+    }
+
+    .order-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+
+    .order-footer {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .view-details-button,
+    .cancel-order-button {
+        width: 100%;
+    }
+}

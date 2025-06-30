@@ -1,0 +1,102 @@
+.orchid-card-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
+    gap: 30px;
+    justify-content: center;
+}
+
+.orchid-card-grid .my-4 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+.orchid-card-grid .my-4:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+}
+
+.loading-spinner {
+    border: 4px solid #f3f3f3;
+    border-top: 4px solid #73CABE;
+    /* Use your prominent color */
+    border-radius: 50%;
+    width: 30px;
+    height: 30px;
+    animation: spin 1s linear infinite;
+    margin: 20px auto;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-message {
+    color: #e74c3c;
+    text-align: center;
+    font-size: 1.1rem;
+    margin-top: 20px;
+}
+
+
+@media (max-width: 768px) {
+    .homepage-header {
+        flex-direction: column;
+        padding: 10px;
+    }
+
+    .homepage-nav ul {
+        margin-top: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .homepage-nav li {
+        margin: 5px 15px;
+    }
+
+    .orchid-card-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 20px;
+    }
+
+    .homepage-title {
+        font-size: 2.5rem;
+        margin-bottom: 40px;
+    }
+
+    .homepage-tagline {
+        font-size: 1.2rem;
+        margin-bottom: 40px;
+    }
+}
+
+@media (max-width: 480px) {
+    .homepage-header-logo {
+        font-size: 1.5rem;
+    }
+
+    .homepage-nav a {
+        font-size: 1rem;
+    }
+
+    .orchid-card-grid {
+        grid-template-columns: 1fr;
+        gap: 25px;
+    }
+
+    .homepage-title {
+        font-size: 2rem;
+        margin-bottom: 30px;
+    }
+
+    .homepage-tagline {
+        font-size: 1rem;
+        margin-bottom: 30px;
+    }
+}

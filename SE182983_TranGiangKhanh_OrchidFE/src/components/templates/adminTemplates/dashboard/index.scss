@@ -1,0 +1,47 @@
+#dashboardContent {
+    #dashboardHeader{
+        display: flex;
+        gap:20px;
+    
+        #dashboardFilter {
+            background: #21222D;
+            padding: 20px;
+            width: 60%;
+            .filter-detail{
+                .search-box{
+                    display: flex;
+                    gap: 20px;
+                    > input{
+                        background: #171821;
+                        color: white;
+                        border: none;
+                        &::placeholder{
+                            color: white;
+                        }
+                        width: 80%;
+                    }
+                    > button{
+                        background: #171821;
+                        color: white;
+                        border: none;
+                        border-radius: 10px;
+                        width: 20%;
+                    }
+                }
+            }
+        }
+        #dashboardStats {
+            background: #21222D;
+            padding: 20px;
+            width: 40%;
+            // .stats-title{
+            // }
+            .stats-detail{
+                display: flex;
+                justify-content: center;
+                width: 100%;
+                gap:20px
+            }
+        }
+    }
+}

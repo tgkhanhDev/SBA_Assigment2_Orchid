@@ -1,0 +1,74 @@
+    [
+        {
+            "id": 1,
+            "accountID": 1,
+            "orderDate": "2025-06-01",
+            "orderStatus": "Delivered",
+            "totalAmount": 1500000,
+            "OrderDetail": [
+                {
+                    "id": 1,
+                    "orchidID": 1,
+                    "orchidName": "White Phalaenopsis",
+                    "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/dang-web-1200-x-1200-px-12-1.png?v=1748401281163",
+                    "price": 500000,
+                    "quantity": 2,
+                    "orderID": 1
+                },
+                {
+                    "id": 2,
+                    "orchidID": 2,
+                    "orchidName": "Pink Dendrobium",
+                    "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/chua-co-ten-1200-x-1200-px-62-1.png?v=1746707909727",
+                    "price": 500000,
+                    "quantity": 1,
+                    "orderID": 1
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "accountID": 2,
+            "orderDate": "2025-06-05",
+            "orderStatus": "Processing",
+            "totalAmount": 2300000,
+            "OrderDetail": [
+                {
+                    "id": 1,
+                    "orchidID": 103,
+                    "orchidName": "Yellow Oncidium",
+                    "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/dang-web-1200-x-1200-px-12-1.png?v=1748401281163",
+                    "price": 700000,
+                    "quantity": 2,
+                    "orderID": 2
+                },
+                {
+                    "id": 2,
+                    "orchidID": 104,
+                    "orchidName": "Blue Vanda",
+                    "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/chua-co-ten-1200-x-1200-px-62-1.png?v=1746707909727",
+                    "price": 900000,
+                    "quantity": 1,
+                    "orderID": 2
+                }
+            ]
+        },
+        {
+            "id": 3,
+            "accountID": 1,
+            "orderDate": "2025-06-07",
+            "orderStatus": "Pending",
+            "totalAmount": 800000,
+            "OrderDetail": [
+                {
+                    "id": 1,
+                    "orchidID": 105,
+                    "orchidName": "Green Cymbidium",
+                    "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/dang-web-1200-x-1200-px-12-1.png?v=1748401281163",
+                    "price": 400000,
+                    "quantity": 2,
+                    "orderID": 3
+                }
+            ]
+        }
+    ]

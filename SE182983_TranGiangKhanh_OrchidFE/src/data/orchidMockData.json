@@ -1,0 +1,26 @@
+[
+    {
+        "orchidID": 1,
+        "isNatural": true,
+        "orchidDescription": "Lan hồ điệp màu tím, hoa lớn, bền, thích hợp trang trí phòng khách",
+        "orchidName": "Hồ Điệp Tím",
+        "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/dang-web-1200-x-1200-px-12-1.png?v=1748401281163",
+        "price": 150000,
+        "Category": {
+            "categoryID": 1,
+            "categoryName": "Lan Hồ Điệp"
+        }
+    },
+    {
+        "orchidID": 2,
+        "isNatural": false,
+        "orchidDescription": "Lan giả hạc trắng, phù hợp cho ban công hoặc sân vườn",
+        "orchidName": "Giả Hạc Trắng",
+        "orchidUrl": "https://bizweb.dktcdn.net/100/503/876/products/chua-co-ten-1200-x-1200-px-62-1.png?v=1746707909727",
+        "price": 100000,
+        "Category": {
+            "categoryID": 2,
+            "categoryName": "Lan Giả Hạc"
+        }
+    }
+]

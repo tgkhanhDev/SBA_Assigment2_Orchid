@@ -1,0 +1,37 @@
+[
+    {
+        "accountID": 1,
+        "accountName": "John Doe",
+        "accountEmail": "john.doe@example.com",
+        "accountRole": 1,
+        "accountPassword": "123"
+    },
+    {
+        "accountID": 2,
+        "accountName": "Jane Smith",
+        "accountEmail": "jane.smith@example.com",
+        "accountRole": 2,
+        "accountPassword": "123"
+    },
+    {
+        "accountID": 3,
+        "accountName": "Alice Johnson",
+        "accountEmail": "alice.johnson@example.com",
+        "accountRole": 1,
+        "accountPassword": "alice789"
+    },
+    {
+        "accountID": 4,
+        "accountName": "Bob Brown",
+        "accountEmail": "bob.brown@example.com",
+        "accountRole": 2,
+        "accountPassword": "bobpass101"
+    },
+    {
+        "accountID": 5,
+        "accountName": "Emma Davis",
+        "accountEmail": "emma.davis@example.com",
+        "accountRole": 2,
+        "accountPassword": "emma2023"
+    }
+]

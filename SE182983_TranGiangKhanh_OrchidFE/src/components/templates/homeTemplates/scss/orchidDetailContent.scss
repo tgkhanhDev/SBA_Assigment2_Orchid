@@ -1,0 +1,122 @@
+.orchid-detail-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    padding: 40px;
+    margin-top: 40px;
+    text-align: center;
+}
+
+.detail-title {
+    font-size: 3rem;
+    color: #2c3e50;
+    margin-bottom: 30px;
+}
+
+.detail-content-layout {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 40px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.detail-image-wrapper {
+    flex: 1;
+    min-width: 300px;
+    max-width: 500px;
+}
+
+.detail-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.08);
+}
+
+.detail-info-buy {
+    flex: 1.5;
+    min-width: 300px;
+    text-align: left;
+    font-size: 1.1rem;
+    line-height: 1.8;
+}
+
+.detail-info-buy p {
+    margin-bottom: 15px;
+}
+
+.detail-info-buy strong {
+    color: #444;
+}
+
+.quantity-control {
+    margin-top: 20px;
+    margin-bottom: 20px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.quantity-control label {
+    font-weight: bold;
+}
+
+.quantity-control input {
+    width: 80px;
+    padding: 8px 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 1rem;
+    text-align: center;
+}
+
+.buy-button {
+    background-color: #28a745;
+    /* Màu xanh lá cho nút mua */
+    color: white;
+    padding: 12px 25px;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.buy-button:hover {
+    background-color: #218838;
+    transform: translateY(-2px);
+}
+
+@media (max-width: 992px) {
+    .detail-content-layout {
+        flex-direction: column;
+        align-items: center;
+        gap: 30px;
+    }
+
+    .detail-image-wrapper,
+    .detail-info-buy {
+        max-width: 100%;
+        min-width: unset;
+    }
+
+    .orchid-detail-card {
+        padding: 20px;
+    }
+
+    .detail-title {
+        font-size: 2.2rem;
+    }
+
+    .detail-info-buy {
+        font-size: 1rem;
+        text-align: center;
+    }
+
+    .quantity-control {
+        justify-content: center;
+    }
+}
