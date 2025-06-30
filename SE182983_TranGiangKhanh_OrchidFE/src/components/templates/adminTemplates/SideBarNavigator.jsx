@@ -13,7 +13,7 @@ export const SideBarNavigator = () => {
       </div>
       <SideBarPill iconTag={<i className="fa fa-bars mx-2" />} name={'Quản lý Hoa'} urlNavigate={'admin'} />
       <SideBarPill iconTag={<i className="fa fa-th-large mx-2" />} name={'Quản lý loại hoa'} urlNavigate={'admin/category'} />
-      <SideBarPill iconTag={<i className="fa fa-user mx-2" />} name={'Quản lý người dùng'} urlNavigate={'admin/user'} />
+      {/* <SideBarPill iconTag={<i className="fa fa-user mx-2" />} name={'Quản lý người dùng'} urlNavigate={'admin/user'} /> */}
       <SideBarPill iconTag={<i className="fa fa-home mx-2" />} name={'Trang chủ'} urlNavigate={''} />
     </div>
   )

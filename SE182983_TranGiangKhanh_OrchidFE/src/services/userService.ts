@@ -3,18 +3,23 @@ import { AxiosResponse } from "axios";
 import mockData from '../data/authMockData.json';
 
 const userApi = apiInstance({
-    baseURL: "http://localhost:8080/account",
+    baseURL: "http://localhost:8080/auth/account",
 });
 
 const userService = {
 
     getUserWithFilter: async (req: GetUserWithFilter): Promise<ApiResponse<User[]> | null> => {
         try {
-            // const users: AxiosResponse<ApiResponse<User[]>> = await userApi.get(`/list?email=${req.accountEmail}`);
+            const users = await userApi.get("", 
+                {
+                    params: {
+                        search: req.accountEmail
+                    }
+                }
+            );
             // return users.data;
-            const users: User[] = mockData;
             return {
-                data: users.filter(item => item.accountEmail.toLowerCase().includes(req.accountEmail.toLowerCase())),
+                data: users.data,
                 code: 200,
                 message: 'Success'
             }

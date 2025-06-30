@@ -9,6 +9,9 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+import java.util.stream.Collectors;
+
 @Service
 @RequiredArgsConstructor
 public class AccountServiceImpl implements AccountService {
@@ -39,11 +42,16 @@ public class AccountServiceImpl implements AccountService {
 
     @Override
     public Account getAccountByEmail(String email) {
-        return accountRepository.findByEmail(email);
+        return accountRepository.findByEmail(email).orElseThrow(()-> new AppException(400, "Tài khoản hoặc mật khẩu chưa chính xác", HttpStatus.BAD_REQUEST));
     }
 
     @Override
     public boolean isEmailExist(String email) {
         return accountRepository.existsByEmail(email);
+    }
+
+    @Override
+    public List<AccountResponse> getAllAccountsSearchByEmail(String email) {
+        return accountRepository.findByEmailContainingIgnoreCase(email).stream().map(AccountResponse::of).collect(Collectors.toList());
     }
 }

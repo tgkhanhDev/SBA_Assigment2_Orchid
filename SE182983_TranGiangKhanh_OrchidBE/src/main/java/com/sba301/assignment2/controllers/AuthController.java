@@ -17,6 +17,8 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 @RequestMapping("/auth")
 @AllArgsConstructor
@@ -72,4 +74,10 @@ public class AuthController {
         return "test";
     }
 
+    @GetMapping("/account")
+    public List<AccountResponse> getAllAccounts(@RequestParam(value = "search", required = false) String email) {
+        List<AccountResponse> accountResponses = accountService.getAllAccountsSearchByEmail(email);
+        return accountResponses;
+
+    }
 }

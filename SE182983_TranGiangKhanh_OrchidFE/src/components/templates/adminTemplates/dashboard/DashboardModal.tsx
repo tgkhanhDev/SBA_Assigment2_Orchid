@@ -26,7 +26,6 @@ export const DashboardModal = () => {
     ]
 
     const handleCreateOrchid = async () => {
-        console.log("Craete Info: ", orchidUpdateInfo);
         const createResponse = orchidService.createOrchid(orchidUpdateInfo);
         await fetchOrchidList();
         await fetchOrchidStats();

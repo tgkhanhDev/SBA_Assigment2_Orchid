@@ -125,12 +125,12 @@ export const DashboardProvider = ({ children }) => {
     } else {
       errors.price = "";
     }
-    if (!orchidUpdateInfo.categoryID || orchidUpdateInfo.categoryID == 0) {
-      isErrorFree = false;
-      errors.categoryID = "Category cannot be empty";
-    } else {
-      errors.categoryID = "";
-    }
+    // if (!orchidUpdateInfo.categoryID || orchidUpdateInfo.categoryID == 0) {
+    //   isErrorFree = false;
+    //   errors.categoryID = "Category cannot be empty";
+    // } else {
+    //   errors.categoryID = "";
+    // }
     if (orchidUpdateInfo.orchidDescription === '') {
       isErrorFree = false;
       errors.orchidDescription = "Orchid description cannot be empty";
